@@ -1,6 +1,9 @@
 package pl.edu.ug.tent.springintro.domain;
 
+import java.util.UUID;
+
 public class Person {
+  private String id;
 
   private String firstname;
   private String lastname;
@@ -17,6 +20,7 @@ public class Person {
     this.lastname = lastname;
     this.email = email;
     this.company_name = company_name;
+    this.id = generateUserId();
 
     System.out.println("Creating person " + this);
   }
@@ -37,6 +41,10 @@ public class Person {
     return email;
   }
 
+  public String getId() {
+    return id;
+  }
+
   public void setFirstname(String firstname) {
     this.firstname = firstname;
   }
@@ -53,9 +61,19 @@ public class Person {
     this.email = email;
   }
 
+  public void setId(String id) {
+    this.id = id;
+  }
+
+  private String generateUserId() {
+    UUID uuid = UUID.randomUUID();
+    return uuid.toString();
+  }
+
   @Override
   public String toString() {
     return "Person{" +
+            "id=" + id +", " +
         "firstname='" + firstname + '\'' +
         ", lastname=" + lastname +
             ", email=" + email +
