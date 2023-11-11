@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Aplikacje-przemyslowe.iml" filepath="$PROJECT_DIR$/.idea/Aplikacje-przemyslowe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Stepik04zad3/springintro.iml" filepath="$PROJECT_DIR$/Stepik04zad3/springintro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Stepik05zad4/springintro (1).iml" filepath="$PROJECT_DIR$/Stepik05zad4/springintro (1).iml" />
+    </modules>
+  </component>
+</project>
