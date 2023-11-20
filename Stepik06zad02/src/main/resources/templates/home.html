@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>App</title>
+</head>
+<body>
+    <div>
+        <h1 th:text="${'Witaj:' + user.getName() + '!'}"></h1>
+        <h4 th:text="${'od Twojej rejestracji minęło:' + user.getDaysSinceRegistartion() + ' dni.'}"></h4>
+    </div>
+    <div>
+        <h1>Dane użytkownika</h1>
+        <p th:text="${'Name:' + user.getName()}"></p>
+        <p th:text="${'ID: ' + user.getId()}"></p>
+        <p th:text="${'Age: ' + user.getAge()}"></p>
+        <p th:text="${'UserType: ' + user.getUserType()}"></p>
+        <p th:text="${'RegistrationDate: ' + #dates.format(user.getRegistrationDate(), 'yyyy-MM-dd HH:mm')}"></p>
+    </div>
+    <div>
+        <p>Czy artur na stronie: <span th:text="${user.name == 'Addrtur' ? 'tak' : 'nie'}"></span>   </p>
+    </div>
+</body>
+</html>
