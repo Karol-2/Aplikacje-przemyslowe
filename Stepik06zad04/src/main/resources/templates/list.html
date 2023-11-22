@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+  <h1>Lista Użytkowników</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Imię</th>
+            <th>Wiek</th>
+            <th>Typ</th>
+            <th>Data rejestracji</th>
+            <th>Ilość dni od rejestracji</th>
+        </tr>
+    </thead>
+    <tbody th:each="user, iter: ${users}">
+        <tr>
+            <td th:text="${user.getId()}"></td>
+            <td th:text="${user.getName()}"></td>
+            <td th:text="${user.getAge()}"></td>
+            <td th:switch="${user.getUserType()}">
+                <span th:case="${user.userType.ADMIN}">Administrator</span>
+                <span th:case="${user.userType.GUEST}">Gość</span>
+                <span th:case="${user.userType.REGISTERED}">Zarejestrowany</span>
+
+            </td>
+            <td th:text="${#dates.format(user.getRegistrationDate(), 'yyyy-MM-dd HH:mm')}"></td>
+            <td th:text="${#dates.createNow().getTime() / 1000 / 60 / 60 / 24 - user.getRegistrationDate().getTime() / 1000 / 60 / 60 / 24}"></td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
