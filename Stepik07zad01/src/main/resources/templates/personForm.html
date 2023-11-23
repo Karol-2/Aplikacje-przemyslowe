@@ -34,6 +34,33 @@
               th:errors="*{age}">Age Error
         </span>
         <br/>
+
+        <label for="postalCode">Postal code:</label>
+        <input type="text" th:field="*{postalCode}"/>
+
+        <span class="validationError"
+              th:if="${#fields.hasErrors('postalCode')}"
+              th:errors="*{postalCode}">Age Error
+        </span>
+        <br/>
+
+        <label for="salary">Salary:</label>
+        <input type="text" th:field="*{salary}"/>
+
+        <span class="validationError"
+              th:if="${#fields.hasErrors('salary')}"
+              th:errors="*{salary}">Age Error
+        </span>
+        <br/>
+
+        <label for="acceptedCondictions">Accept:</label>
+        <input type="checkbox" th:field="*{acceptedCondictions}" value="accept"/>
+        <span class="vaccept"
+              th:if="${#fields.hasErrors('acceptedCondictions')}"
+              th:errors="*{acceptedCondictions}">Accept Error
+        </span>
+        <br/>
+
         <input type="submit" value="Submit"/>
     </form>
 
